@@ -7,18 +7,18 @@ const HeroSection = () => {
     <section id="hero-section" className="container mx-auto h-screen flex">
       <div className="relative self-center">
         <Image
-          src="/images/img-basketball.png"
+          src="/images/img-basketball-transparent.png"
+          alt="Image SportOn"
           width={432}
           height={423}
-          alt="image sporton"
           className="grayscale absolute left-0 -top-20"
         />
         <div className="relative ml-40 w-full">
           <div className="text-primary italic">Friday Sale, 50%</div>
-          <h1 className="font-extrabold text-[95px] italic bg-gradient-to-b leading-tight from-black to-[#979797] bg-clip-text text-transparent">
+          <h1 className="font-extrabold italic text-[95px] leading-none bg-linear-to-b from-black to-[#979797] bg-clip-text text-transparent">
             WEAR YOUR <br /> TOP-QUALITY <br /> SPORTSWEAR
           </h1>
-          <p className="w-1/2 mt-10 leading-loose">
+          <p className="text-justify w-1/2 mt-10 leading-loose">
             Engineered for endurance and designed for speed. Experience gear
             that moves as fast as you do. Premium fabrics. Unmatched comfort.
             Limitless motion.
@@ -31,7 +31,7 @@ const HeroSection = () => {
               Watch Video{" "}
               <Image
                 src="/images/icon-play-video.svg"
-                alt="icon playvideo"
+                alt="Icon play video"
                 width={29}
                 height={29}
               />
@@ -40,18 +40,18 @@ const HeroSection = () => {
         </div>
         <Image
           src="/images/img-hero.png"
+          alt="Image Hero"
           width={700}
           height={950}
-          alt="image sporton hero"
           className="absolute -right-5 top-1/2 -translate-y-1/2"
         />
       </div>
       <Image
         src="/images/img-ornament-hero.svg"
+        alt="Image SportOn"
         width={420}
         height={420}
-        alt="image sporton"
-        className="absolute -right-[200px] top-1/2 -translate-y-1/2"
+        className="absolute -right-50 top-1/2 -translate-y-1/2"
       />
     </section>
   );

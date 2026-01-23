@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState, useRef } from "react";
 import { FiImage, FiTrash2, FiUploadCloud } from "react-icons/fi";
 
 type TFileUploadProps = {
@@ -13,7 +13,6 @@ const FileUpload = ({ onFileSelect }: TFileUploadProps) => {
 
   const handleFileChange = (selectedFile?: File) => {
     if (!selectedFile) return;
-
     setFile(selectedFile);
     onFileSelect?.(selectedFile);
   };
@@ -57,7 +56,7 @@ const FileUpload = ({ onFileSelect }: TFileUploadProps) => {
             onClick={removeFile}
             className="flex gap-2 bg-primary/90 text-white mx-auto rounded mt-4 px-2"
           >
-            <FiTrash2 className="self-center" /> Remove
+            <FiTrash2 size={14} className="self-center" /> Remove
           </button>
         </div>
       )}

@@ -7,4 +7,5 @@ const priceFormatter = (price: number) => {
 
   return newFormat;
 };
+
 export default priceFormatter;
