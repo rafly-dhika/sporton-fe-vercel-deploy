@@ -2,11 +2,11 @@
 
 import Button from "@/app/(landing)/components/ui/button";
 import { FiPlus } from "react-icons/fi";
-import ProductTable from "../../components/products/product-table";
-import ProductModal from "../../components/products/product-modal";
 import { useState } from "react";
+import BankInfoModal from "../../components/bank-info/bank-info-modal";
+import BankInfoList from "../../components/bank-info/bank-info-list";
 
-const ProductManagement = () => {
+const BankInfoManagement = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleCloseModal = () => {
     setIsOpen(false);
@@ -16,19 +16,19 @@ const ProductManagement = () => {
     <div>
       <div className="flex justify-between items-center mb-10">
         <div>
-          <h1 className="font-bold text-2xl">Product Management</h1>
+          <h1 className="font-bold text-2xl">Bank Info Management</h1>
           <p className="opacity-50">
-            Manage your inventory, prices, and stock.
+            Manage destination accounts for customer transfers.
           </p>
         </div>
         <Button className="rounded-lg" onClick={() => setIsOpen(true)}>
-          <FiPlus size={24} /> Add Product
+          <FiPlus size={24} /> Add Bank Account
         </Button>
       </div>
-      <ProductTable />
-      <ProductModal isOpen={isOpen} onClose={handleCloseModal} />
+      <BankInfoModal isOpen={isOpen} onClose={handleCloseModal} />
+      <BankInfoList />
     </div>
   );
 };
 
-export default ProductManagement;
+export default BankInfoManagement;

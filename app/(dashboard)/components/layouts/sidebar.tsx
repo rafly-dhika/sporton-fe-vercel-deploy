@@ -3,7 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FiBox, FiCreditCard, FiLayers, FiShoppingCart } from "react-icons/fi";
+import {
+  FiBox,
+  FiCreditCard,
+  FiLayers,
+  FiLogOut,
+  FiShoppingCart,
+} from "react-icons/fi";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -55,6 +61,14 @@ const Sidebar = () => {
           );
         })}
       </div>
+
+      <Link
+        href="#"
+        className="flex gap-3 font-medium py-3 px-4.5 mx-5 hover:bg-gray-100 duration-300 rounded-lg mt-auto mb-10"
+      >
+        <FiLogOut size={24} />
+        Log Out
+      </Link>
     </aside>
   );
 };
