@@ -89,10 +89,7 @@ const TransactionModal = ({
 
           <div className="space-y-3">
             {transaction.purchasedItems.map((item) => (
-              <div
-                className="border border-gray-200 rounded-lg p-2 flex items-center gap-2"
-                key={item.productId}
-              >
+              <div className="border border-gray-200 rounded-lg p-2 flex items-center gap-2">
                 <div className="bg-gray-100 rounded aspect-square w-8 h-8">
                   <Image
                     src={getImageUrl(item.productId.imageUrl)}
