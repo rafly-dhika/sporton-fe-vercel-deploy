@@ -22,7 +22,7 @@ const Button = ({
   };
 
   const sizes = {
-    normal: "py-4 px-10",
+    normal: "py-4 px-9",
     small: "py-[10px] px-7",
   };
 

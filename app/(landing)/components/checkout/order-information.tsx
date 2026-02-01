@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 import CardWithHeader from "../ui/card-with-header";
 import { CustomerInfo } from "@/app/hooks/use-cart-store";
 
@@ -11,7 +11,7 @@ type TOrderInformation = {
 
 const OrderInformation = ({ formData, setFormData }: TOrderInformation) => {
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -23,33 +23,33 @@ const OrderInformation = ({ formData, setFormData }: TOrderInformation) => {
           <label htmlFor="customerName">Full Name</label>
           <input
             type="text"
+            placeholder="Type your full name"
             id="customerName"
             name="customerName"
-            placeholder="Type your full name"
+            value={formData.customerName}
             onChange={handleInputChange}
-            value={formData.customerName ?? ""}
           />
         </div>
         <div className="input-group">
-          <label htmlFor="customerContact">Whatsapp Number </label>
+          <label htmlFor="customerContact">Whatsapp Number</label>
           <input
-            type="text"
+            type="number"
+            placeholder="Type your whatsapp number"
             id="customerContact"
             name="customerContact"
-            placeholder="Type your whatsapp number"
-            onChange={handleInputChange}
             value={formData.customerContact ?? ""}
+            onChange={handleInputChange}
           />
         </div>
         <div className="input-group">
           <label htmlFor="customerAddress">Shipping Address</label>
           <textarea
+            placeholder="Type your shipping address"
             id="customerAddress"
             name="customerAddress"
-            placeholder="Type your shipping address"
             rows={7}
+            value={formData.customerAddress}
             onChange={handleInputChange}
-            value={formData.customerAddress ?? ""}
           />
         </div>
       </div>

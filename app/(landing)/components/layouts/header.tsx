@@ -17,12 +17,12 @@ const Header = () => {
         <Link href="/">
           <Image
             src="/images/logo.svg"
-            alt="SportOn Logo"
+            alt="sporton logo"
             width={127}
             height={30}
           />
         </Link>
-        <nav className="flex gap-20 font-medium">
+        <nav className="flex gap-24 font-medium">
           <Link
             href="#"
             className="relative after:content-[''] after:block after:bg-primary after:rounded-full after:h-0.75 after:w-1/2 after:absolute after:left-1/2 after:-translate-x-1/2 after:translate-y-1"
@@ -32,7 +32,7 @@ const Header = () => {
           <Link href="#">Category</Link>
           <Link href="#">Explore Products</Link>
         </nav>
-        <div className="flex gap-10 relative">
+        <div className="relative flex gap-10">
           <FiSearch size={24} />
           <button
             className="relative cursor-pointer"

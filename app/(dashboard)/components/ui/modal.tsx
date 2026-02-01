@@ -1,7 +1,7 @@
 import { FiX } from "react-icons/fi";
 
 type TModalProps = {
-  isOpen: boolean;
+  isOpen: boolean; // true / false
   onClose: () => void;
   title: string;
   children: React.ReactNode;
@@ -16,12 +16,12 @@ const Modal = ({ isOpen, onClose, title, children }: TModalProps) => {
         className="absolute bg-black/50 backdrop-blur-sm transition-opacity w-full h-full"
         onClick={onClose}
       ></div>
-      <div className="relative bg-white rounded-xl w-full max-w-2xl">
+      <div className="relative bg-white rounded-xl w-full max-w-2xl ">
         <div className="flex justify-between items-center px-7 py-3 border-b border-gray-200">
           <h3 className="font-semibold text-xl">{title}</h3>
           <button
             onClick={onClose}
-            className="p-4 hover:bg-gray-100 rounded-full cursor-pointer"
+            className="p-4 rounded-full hover:bg-gray-100 cursor-pointer"
           >
             <FiX size={24} />
           </button>

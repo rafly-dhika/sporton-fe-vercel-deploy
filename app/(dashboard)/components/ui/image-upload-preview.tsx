@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRef } from "react";
-import { FiUploadCloud } from "react-icons/fi";
+import { FiEdit, FiUploadCloud } from "react-icons/fi";
 
 type TImageUploadPreviewProps = {
   label?: string;
@@ -18,35 +18,42 @@ const ImageUploadPreview = ({
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleImageClick = () => {
-    fileInputRef.current?.click();
+    fileInputRef?.current?.click();
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) onChange(file);
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      onChange(file);
+    }
   };
 
   return (
     <div className={className}>
       <div
         onClick={handleImageClick}
-        className="cursor-pointer border-2 border-primary border-dashed bg-primary/5 rounded-lg h-50 flex flex-col justify-center items-center overflow-hidden relative"
+        className="border-2 border-dashed border-primary bg-primary/5 rounded-lg h-50 flex flex-col justify-center items-center"
       >
         {value ? (
-          <Image
-            src={value}
-            alt="Preview Product"
-            className="object-cover"
-            width={190}
-            height={190}
-          />
+          <div className="max-w-47.5 relative">
+            <Image
+              src={value}
+              alt="preview product"
+              className="w-full h-full object-cover"
+              width={190}
+              height={190}
+            />
+            <div className="opacity-0 hover:opacity-100 absolute top-0 left-0 flex z-50">
+              <FiEdit />
+              Change Image
+            </div>
+          </div>
         ) : (
           <>
             <FiUploadCloud className="text-primary" size={24} />
             <span className="text-sm font-medium">Click to Upload</span>
           </>
         )}
-
         <input
           type="file"
           ref={fileInputRef}
